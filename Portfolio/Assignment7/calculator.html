@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/my_portfolio.html">Pro-Dev-1.0</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#w1">Week1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#w2">Week2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#w3">Week3</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container bg-info col-md-6" style="margin-top: 100px;">
+    <h1 align="center">My Calculator</h1>
+    <div class="row">
+      <input type="text" class="xyz" id="t1">
+    </div>
+    <div class="row mt-2">
+
+      <div class="col-md-3">
+        <div class="row mt-2">
+          <button class="form-control" onclick="click1('9')">9</button>
+        </div>
+        <div class="row mt-2">
+          <button class="form-control" onclick="click1('6')">6</button>
+        </div>
+
+      </div>
+
+      <div class="col-md-3">
+        <div class="row mt-2">
+          <button class="form-control" onclick="click1('8')">8</button>
+        </div>
+        <div class="row mt-2">
+          <button class="form-control" onclick="click1('5')">5</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="row mt-2">
+          <button class="form-control" onclick="click1('7')">7</button>
+        </div>
+        <div class="row mt-2">
+          <button class="form-control" onclick="click1('4')">4</button>
+        </div>
+      </div>
+      <div class="col-md-3 mt-2">
+        <button class="form-control h-100" onclick="equal()">=</button>
+
+      </div>
+    </div>
+    <div class="row mt-2">
+
+
+      <div class="col-md-3">
+        <div class="row mt-2">
+          <button class="form-control" onclick="click1('3')">3</button>
+        </div>
+        <div class="row mt-2 mb-2">
+          <button class="form-control" onclick="click1('0')">0</button>
+        </div>
+
+      </div>
+
+      <div class="col-md-3">
+        <div class="row mt-2">
+          <button class="form-control" onclick="click1('2')">2</button>
+        </div>
+        <div class="row mt-2 mb-2">
+          <button class="form-control" onclick="click1('*')">*</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="row mt-2">
+          <button class="form-control" onclick="click1('1')">1</button>
+        </div>
+        <div class="row mt-2 mb-2">
+          <button class="form-control" onclick="click1('/')">/</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="row mt-2">
+          <button class="form-control" onclick="click1('+')">+</button>
+        </div>
+        <div class="row mt-2 mb-2">
+          <button class="form-control" onclick="click1('-')">-</button>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2 mb-2">
+      <div class="col-md-6 mb-2">
+        <button class="form-control" onclick="clear1">C1</button>
+      </div>
+      <div class="col-md-6 mb-2
+        ">
+        <button class="form-control" onclick="clear2">C2</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer  ">
+    <div class="card">
+      <div class="card-header bg-dark text-light">
+        Contact US
+      </div>
+      <div class="card-body">
+        <a href="www.linkedin.com/in/" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="btn btn-secondary"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="#" class="btn btn-secondary"><i class="fa-brands fa-square-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/baac11e6d4.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script>
+    var st = "";
+    function click1(a) {
+      st = st + a;
+      document.getElementById('t1').value = st;
+
+    }
+    function equal() {
+      st = eval(st);
+      document.getElementById('t1').value = st;
+    }
+    function clear1() {
+      st = "";
+      document.getElementById('t1').value = st;
+    }
+
+    function clear2() {
+      st = st.slice(0, st.length - 1);
+      document.getElementById("t1").value = st;
+
+    }
+
+
+
+
+  </script>
+
+</body>
+
+</html>
